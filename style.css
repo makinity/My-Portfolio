@@ -1288,7 +1288,7 @@ header ul a:hover{
     }
 
     .section-title {
-        font-size: 25px;
+        font-size: 40px;
         margin-bottom: auto;
         margin-top: auto;
     }
@@ -1351,7 +1351,7 @@ header ul a:hover{
     .my-project{
         gap: 70px;
         margin-top: 30px;
-        margin-bottom: 1500px;
+        margin-bottom: 650px;
     }
 
     .slider{
