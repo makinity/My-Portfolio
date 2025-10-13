@@ -1309,30 +1309,26 @@ header ul a:hover{
         gap: 10px;
     }
 
-    .project-info p{
-        margin-bottom: 15px;
-        font-size: 10px;
+    .project-info p {
+        width: 100%;
+        font-size: 15px;
         text-wrap: wrap;
-        max-width: none;
-        width: auto;
+        margin-bottom: 15px;
     }
 
     .project-info h1{
-        font-size: 20px;
+        max-width: 100%;
+        font-size: 30px;
+        white-space: normal;
     }
 
-    .project-info{
-        margin-left: -80px;
-        height: 50  px;
-        margin-top:auto;
-        margin-left: auto;
-        margin-right: auto;
-        transition: none !important;
-        transform: none !important; 
-        opacity: 1 !important;
-        visibility: visible !important;
-        position: relative;
-        text-align: center; 
+    .project-info {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
 
     .skills-box {
