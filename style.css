@@ -32,7 +32,7 @@ html{
 
 header{
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -49,6 +49,7 @@ header{
 .left{
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .left img{
@@ -71,6 +72,24 @@ header ul{
 header ul li{
     list-style: none;
 }
+#links {
+    color: white;
+    background-color: #007bff; /* Button background */
+    padding: 10px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+}
+
+#links:visited,
+#links:hover,
+#links:active {
+    color: white;
+}
+
 
 header ul a{
     text-decoration: none;
@@ -164,7 +183,7 @@ header ul a:hover{
 }
 
 .hero-info button{
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 15px 35px;
     border-radius: 10px;
     border: 1px solid #72a1de81;
@@ -178,7 +197,6 @@ header ul a:hover{
     box-shadow: 0 0 15px #72a1de81;
 }
 
-/* Gradient Animation */
 .gradient{
     background: linear-gradient(to right,#00aaa7, #7e42a7, #6600c5, #6070fd,#2a46ff, #0099ff, #008ead);
     background-size: 200%;
@@ -193,9 +211,14 @@ header ul a:hover{
     }
 }
 
+.skills-section {
+    margin-top: 720px;
+    height: 100vh;
+}
+
 .skills-video-box{
     position: absolute;
-    right: 3%;
+    right: 7%;
 }
 
 .skills-video{
@@ -232,12 +255,10 @@ header ul a:hover{
   .scroll-down::before {
     top: 30%;
     animation-delay: 0.5s;
-    /* animation: scroll-down 1s ease-in-out infinite; */
   }
   
   @keyframes scroll-down {
     0% {
-      /* top:20%; */
       opacity: 0;
     }
     30% {
@@ -510,6 +531,7 @@ header ul a:hover{
 /* Skills section */
 .skills-section{
     display: flex;
+    gap: 0px;
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -552,14 +574,14 @@ header ul a:hover{
 }
 
 
-.coder{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    top: 25%;
-    right: 5%;
-    max-width: 300px;
+.coder {
+    width: 60%; 
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 25px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .coder h1{
@@ -614,6 +636,8 @@ header ul a:hover{
 }
 .slider .list .item img{
     width: 100%;
+    object-fit: contain;
+    display: block;
 }
 @keyframes autoRun{
     from{
@@ -630,20 +654,18 @@ header ul a:hover{
     filter: grayscale(0);
 }
 
-
-  /* CONTACT SECTION */
 .contact-section{
-    width: 80%;
-    height: 100vh;
+    min-height: auto;         
+    padding: 4rem 2rem;      
     display: flex;
-    justify-content: center;
-    gap: 10%;
+    flex-direction: column;
     align-items: center;
-    position: relative;
+    justify-content: flex-start; 
+    gap: 2.5rem;
+    text-align: center;
 }
 
 .contact-section h1{
-    position: absolute;
     top: 10%;
     left: 40%;
 }
@@ -688,23 +710,72 @@ header ul a:hover{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-
-.contact-box button{
-    margin-top: 30px;
-    color: white;
-    padding: 15px 35px;
-    border-radius: 10px;
-    border: 1px solid #72a1de81;
-    background-color: #2200493d;
-    box-shadow: 0 0 5px #72a1de81;
-    cursor: pointer;
-    transition: 0.3s;
+.contact-box {
+  background: rgba(255, 255, 255, 0.05); 
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-.contact-box button:hover{
-    opacity: 0.8;
-    box-shadow: 0 0 15px #72a1de81;
+.contact-box p {
+  font-size: 0.95rem;
+  color: #ddd;
 }
+
+.contact-box label {
+  font-weight: 600;
+  color: #72a1de;
+  margin-bottom: 0.3rem;
+}
+
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+.contact-box textarea {
+  resize: none;
+  height: 120px;
+}
+
+.contact-box input::placeholder,
+.contact-box textarea::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.contact-box button {
+  margin-top: 1rem;
+  padding: 0.9rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(90deg, #6a5acd, #00c9ff);
+  transition: 0.3s ease;
+}
+
+.contact-box button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #00c9ff, #6a5acd);
+}
+
 
 .footer{
     display: flex;
@@ -718,9 +789,6 @@ header ul a:hover{
     z-index: 999;
     padding: 0 3rem;
 }
-
-
-/* BLUR EFFECT ANIMAION */
 
 .autoBlur{
     animation: autoBlurAnimation linear both;
@@ -741,8 +809,6 @@ header ul a:hover{
     }
 }
 
-
-/* AUTO DISPLAY ANIMAION */
 .autoDisplay{
     animation: autoDisplayAnimation both;
     animation-timeline: view();
@@ -759,9 +825,6 @@ header ul a:hover{
         transform: translateX(0) scale(1);
     }
 }
-
-
-/* FADEIN_LEFT */
 
 .fadein-left{
     animation: fadeInLeftAnimation both;
@@ -782,8 +845,6 @@ header ul a:hover{
     }
 }
 
-/* Sidebar */
-
 .menu-icon{
     font-size: 35px;
     cursor: pointer;
@@ -793,7 +854,7 @@ header ul a:hover{
 
 .sidebar{
     position: fixed;
-    right: 0;
+    right: -40%;
     top: 0;
     bottom: 70%;
     width: 0%;
@@ -837,30 +898,33 @@ header ul a:hover{
 }
 
 .social-sidebar a{
+    display: inline-block;
     font-size: 35px;
     padding: 5px 5px;
     cursor: pointer;
     transition: 0.5s;
 }
 
-/* Sidebar Open ANimation */
 .sidebar.open-sidebar{
     animation: openSideBarAnimation 1.5s forwards;
+    right: 0 !important; 
+    width: 40%;
+    opacity: 1;
+    bottom: 0;
+    transition: 0.7s ease;
 }
 
 @keyframes openSideBarAnimation {
     to{
-        width: 80%;
+        width: 40%;
         opacity: 1;
         bottom: 0;
         border-radius: 0;
     }
 }
 
-/* Sidebar close ANimation */
-
 .sidebar.close-sidebar{
-    animation: closeSideBarAnimation 1.5s forwards;
+    animation: closeSideBarAnimation 1.5s backwards;
 }
 
 @keyframes closeSideBarAnimation {
@@ -878,9 +942,21 @@ header ul a:hover{
     }
 }
 
+.close-icon i:hover {
+    color: rgb(67, 1, 190);
+}
 
+.menu-icon:hover {
+    color: rgb(67, 1, 190);
+}
 
+.sidebar ul li a:hover {
+     color: rgb(67, 1, 190);
+}
 
+.social-sidebar a i:hover {
+    color: rgb(67, 1, 190);
+}
 
 
 @media (max-aspect-ratio: 16/9){
@@ -1187,10 +1263,14 @@ header ul a:hover{
         margin-left: -80px;
     }
 
-    .skills-box{
-        height: 120vh;
-        margin-right: 30px;
-    }
+    .skills-box {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 50px;
+    gap: 40px; 
+    width: 100%;
+}
 
     .slider{
         bottom: 0%;
@@ -1217,14 +1297,281 @@ header ul a:hover{
     .footer .box-icons{
         gap: 10px;
     }
-
-
 }
 
 
+.experience-section {
+    padding: 60px 5% 80px; 
+    color: #f0f0f0;
+    transition: transform 0.3s ease; 
+}
 
+.experience-section h1.section-title {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 2.5em; 
+}
 
+.experience-section h2 {
+    font-size: 1.8em;
+    color: #ffffff; 
+    border-bottom: 2px solid #72a1dea2; 
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
 
+.timeline-container {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    position: relative;
+    padding-left: 20px; 
+}
 
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #3f3f5a; 
+}
 
+.timeline-item {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #2a2a4a; 
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(114, 161, 222, 0.2); 
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -28px; 
+    top: 25px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #72a1dea2; 
+    border: 3px solid #1a1a2e; 
+    z-index: 10;
+}
+
+.timeline-item h3 {
+    font-size: 1.4em;
+    color: #72a1dea2; 
+    margin-bottom: 5px;
+}
+
+.timeline-item h4 {
+    font-size: 1.1em;
+    color: #cccccc;
+    margin-bottom: 10px;
+}
+
+.timeline-item .dates {
+    font-style: italic;
+    color: #aaa;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.timeline-item ul {
+    list-style: none; 
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.timeline-item ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.timeline-item ul li::before {
+    content: '•'; 
+    position: absolute;
+    left: 0;
+    color: #72a1dea2;
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+@media (min-width: 768px) {
+    .timeline-container {
+        padding-left: 50px; 
+    }
+
+    .timeline-item::before {
+        left: -8px; 
+    }
+
+    .experience-section h1.section-title {
+        font-size: 3em;
+    }
+}
+
+.resume-contact-summary {
+    max-width: 1200px;
+    margin: 0 auto 50px; 
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #72a1dea2; 
+    box-shadow: 0 0 15px rgba(114, 161, 222, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.resume-contact-summary:hover {
+    transform: scale(1.01); 
+}
+
+.resume-contact-summary h2 {
+    font-size: 1.5em;
+    border-bottom: 1px solid #72a1dea2;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+}
+
+.resume-contact-summary p {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #cccccc;
+}
+
+.resume-contact-summary p a {
+    color: #72a1dea2; 
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.resume-contact-summary p a:hover {
+    color: #ffffff; 
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px; 
+    flex-wrap: wrap; 
+}
+
+.cta-button-small {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    font-size: 0.95em;
+    text-decoration: none;
+    color: #ffffff;
+    background: #4a4e69; 
+    border-radius: 6px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button-small i {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+.cta-button-small:hover {
+    background: #72a1dea2;
+    box-shadow: 0 0 10px #72a1dea2;
+}
+
+.cta-button {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0 !important; 
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    color: #1a1a2e; 
+    background: linear-gradient(90deg, #72a1dea2, #b2c9e7);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 20px rgba(114, 161, 222, 0.6); 
+}
+
+/* Container to center the game */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Timer Bar Styling */
+#timer-bar {
+    height: 10px;
+    background-color: var(--gradient-color-start, #43aa8b); /* Your starting color */
+    transition: width 0.1s linear; /* Smooth visual feedback */
+}
+
+/* The Color Block */
+#color-block {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 3px solid white;
+}
+
+/* Option Buttons */
+#options-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 300px;
+    margin-top: 15px;
+}
+
+.color-option {
+    padding: 10px 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: background-color 0.2s;
+}
+
+.color-option:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Optional: Feedback Styles */
+.correct-answer {
+    background-color: #43aa8b !important; /* Green */
+}
+.wrong-answer {
+    background-color: #f94144 !important; /* Red */
+}
+.hidden {
+    display: none;
+}
