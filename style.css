@@ -1252,7 +1252,7 @@ header ul a:hover{
     }
 
     .blackhole-box {
-        overflow: hidden;
+        display: none !important;
     }
 
     .blackhole-box video {
@@ -1314,19 +1314,26 @@ header ul a:hover{
         margin-right: auto;
         align-items: center;
         gap: 10px;
+        margin-bottom: 30px; 
     }
 
     .project-info p {
         width: 100%;
+        max-width: 100%; 
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left;
+        
         font-size: 15px;
         text-wrap: wrap;
-        margin-bottom: 15px;
+        margin-bottom: 15px; 
     }
 
     .project-info h1{
         max-width: 100%;
         font-size: 30px;
         white-space: normal;
+        margin-bottom: 15px;
     }
 
     .project-info {
@@ -1334,8 +1341,12 @@ header ul a:hover{
         max-width: 100%;
         text-align: center;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 15px;
         box-sizing: border-box;
+    }
+
+    .skills-section {
+        margin-bottom: auto;
     }
 
     .skills-box {
@@ -1345,7 +1356,12 @@ header ul a:hover{
         padding: 50px;
         gap: 40px; 
         width: 100%;
+        margin-top: auto;
         margin-bottom: auto;
+    }
+
+    .coder {
+        margin-bottom: 30px;
     }
 
     .my-project{
@@ -1360,17 +1376,32 @@ header ul a:hover{
     }
 
     .contact-section{
+        margin-top: 30px;
         scale: 0.9;
         height: 120vh;
     }
 
-    .contact-section .section-title {
-        top: -30px;
+    .contact-section {
         left: 25%;
+        scale: 1.0; 
+        height: auto;
+        min-height: 80vh;
+        position: static; 
+        top: auto; 
+        transform: none; 
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 40px;
+        margin-bottom: auto;
+        margin-top: auto;
     }
 
     .footer{
-        padding: 15px;
+        margin-top: 100px; 
+        padding: 10px 15px;
     }
 
     .footer h1{
