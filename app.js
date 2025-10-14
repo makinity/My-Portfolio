@@ -1,30 +1,6 @@
-async function callGemini(userInput) {
-    const response = await fetch('/api/generate-ai-content', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            // Include your CSRF token if necessary (Laravel Sanctum/Web middleware)
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content 
-        },
-        body: JSON.stringify({
-            prompt: userInput
-        })
-    });
-
-    if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Laravel API Error:", errorData.error);
-        return "Sorry, there was an error generating content.";
-    }
-
-    const data = await response.json();
-    return data.ai_response;
-}
-
-
 const video1 = document.getElementById('projectVideo1');
-const video2 = document.getElementById('projectVideo2'); // Likely null
-const video3 = document.getElementById('projectVideo3'); // Likely null
+const video2 = document.getElementById('projectVideo2');
+const video3 = document.getElementById('projectVideo3'); 
 const hoverSign = document.querySelector('.hover-sign');
 
 const sideBar = document.querySelector('.sidebar');
@@ -32,7 +8,7 @@ const menu = document.querySelector('.menu-icon');
 const closeIcon = document.querySelector('.close-icon');
 
 
-const videoList = [video1, video2, video3].filter(video => video !== null); // Filter out any null elements
+const videoList = [video1, video2, video3].filter(video => video !== null); 
 
 if (videoList.length > 0 && hoverSign) {
     videoList.forEach(function(video) {
