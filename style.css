@@ -395,8 +395,6 @@ header ul a:hover{
     bottom: 35%;
 }
 
-
-
 .my-project{
     display: flex;
     flex-direction: column;
@@ -405,7 +403,7 @@ header ul a:hover{
     position: relative;
     width: 80%;
     height: 100vh;
-    margin-top: 200px;
+    margin-top: 170px;
     margin-bottom: 700px;
 }
 
@@ -1016,12 +1014,21 @@ header ul a:hover{
 
     .card video{
         height: 60%;
-
         margin-top: 5%;
     }
 
+    .experience-section {
+        margin-bottom: 20px;
+    }
+
     .my-project{
-        margin-bottom: 100px;
+        margin-top: 200px;
+        margin-bottom: 300px;
+        scale: 0.8;
+    }
+
+    .skills-section {
+        margin-top: 700px;
         scale: 0.8;
     }
 
@@ -1310,35 +1317,37 @@ header ul a:hover{
         font-size: 5px;
     }
 
+    .info-section {
+        margin-top: 55px;
+    }
+
     .project-card {
         display: flex;
-        background-color: rgba(30, 30, 30, 0.7); /* Example: Dark, semi-transparent background */
-        border-radius: 10px;                     /* Rounded corners */
+        background-color: rgba(30, 30, 30, 0.7); 
+        border-radius: 10px;                     
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         width: 90%;
         max-width: 380px;
         padding: 15px;
         flex-direction: column; 
         height: auto;
-        margin: 0 auto 45px auto; /* 0 auto centers it horizontally */
+        margin: 0 auto 45px auto;
         align-items: center;
         gap: 10px;
     }
 
     .project-info {
-    /* Keep these, but ensure full-width for stacking */
         padding: 0 0; 
         text-align: left;
     }
 
     .project-info p {
-        /* Ensure the text wraps correctly */
         width: 100%;
         max-width: 100%;
-        margin: 0 0 15px 0; /* Clean up margins for spacing */
+        margin: 0 0 15px 0; 
         font-size: 15px;
         text-wrap: wrap;
-        line-height: 1.5; /* Good for mobile readability */
+        line-height: 1.5; 
     }
 
     .project-info h1 {
@@ -1350,7 +1359,7 @@ header ul a:hover{
     }
 
     .skills-section {
-        margin-top: 2600px;
+        margin-top: 2500px;
         margin-bottom: auto;
     }
 
@@ -1385,26 +1394,37 @@ header ul a:hover{
         margin-top: auto;
     }
 
-    .contact-section{
-        margin-top: 30px;
-        scale: 0.9;
-        height: 120vh;
-    }
-
     .contact-section {
-        left: 25%;
-        scale: 1.0; 
+        margin-top: 30px;
         height: auto;
-        min-height: 80vh;
+        min-height: 80vh; 
+        padding-top: 50px;
+        text-align: center;
+        
+        scale: 1.0; 
         position: static; 
         top: auto; 
         transform: none; 
-        padding-top: 50px;
-        text-align: center;
+        
+        /* CORRECT: Set as Flex container */
+        display: flex;
+        flex-direction: column;
+        
+        /* THIS centers all flex items (including .contact-box) horizontally */
+        align-items: center; 
+        
+        justify-content: flex-start;
+    }
+
+
+    .contact-box {
+        max-width: 100%;
+        width: 90%; 
+        margin: 0;
     }
 
     .section-title {
-        font-size: 40px;
+        font-size: 50px;
         margin-bottom: auto;
         margin-top: auto;
     }
