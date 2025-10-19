@@ -1090,8 +1090,7 @@ header ul a:hover{
     }
 
     .hero .skills-video-box{
-        height: 200px;
-        top: 5%;
+        display: none !important;
     }
 
     .info-cards{
@@ -1257,8 +1256,7 @@ header ul a:hover{
     }
 
     .hero .skills-video-box {
-        display: none;
-        
+        display: none !important;
     }
 
     .blackhole-box {
