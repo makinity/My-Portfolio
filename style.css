@@ -1086,7 +1086,7 @@ header ul a:hover{
     }
 
     .scroll-down{
-        bottom: 5%;
+        display: none;
     }
 
     .hero .skills-video-box{
@@ -1291,8 +1291,7 @@ header ul a:hover{
     }
 
     .scroll-down{
-        bottom: 15%;
-        left: 60%;
+        display: none;
     }
 
     .section-title {
