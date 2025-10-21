@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>To-Do Task Manager</title>
+  <style>
+    /* Reset some defaults */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      padding: 30px 30px 40px 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+      color: #2c3e50;
+      font-weight: 700;
+      font-size: 2.2rem;
+    }
+
+    #taskInput {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 16px;
+      border: 2px solid #d1d9e6;
+      border-radius: 8px;
+      transition: border-color 0.3s ease;
+      outline: none;
+    }
+    #taskInput:focus {
+      border-color: #5a9bf6;
+      box-shadow: 0 0 6px #5a9bf6;
+    }
+
+    .buttons {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      flex: 1;
+      padding: 12px 0;
+      border: none;
+      border-radius: 8px;
+      background: #5a9bf6;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(90, 155, 246, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background: #417de8;
+      box-shadow: 0 8px 20px rgba(65, 125, 232, 0.6);
+    }
+
+    button:active {
+      background: #3464c8;
+      box-shadow: 0 3px 6px rgba(52, 100, 200, 0.7);
+    }
+
+    #clearCompletedBtn {
+      background: #e74c3c;
+      box-shadow: 0 5px 10px rgba(231, 76, 60, 0.4);
+    }
+    #clearCompletedBtn:hover {
+      background: #c0392b;
+      box-shadow: 0 8px 20px rgba(192, 57, 43, 0.6);
+    }
+    #clearCompletedBtn:active {
+      background: #992d22;
+      box-shadow: 0 3px 6px rgba(153, 45, 34, 0.7);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 30px;
+      max-height: 300px;
+      overflow-y: auto;
+      text-align: left;
+      border-top: 1px solid #ddd;
+    }
+
+    li {
+      font-size: 18px;
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      user-select: none;
+      border-radius: 6px;
+    }
+
+    li:hover {
+      background-color: #f4f9ff;
+    }
+
+    .done {
+      color: #27ae60;
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+
+
+    ul::-webkit-scrollbar {
+      width: 6px;
+    }
+    ul::-webkit-scrollbar-thumb {
+      background-color: #5a9bf6;
+      border-radius: 3px;
+    }
+    ul::-webkit-scrollbar-track {
+      background: #f0f4f8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do Task Manager</h1>
+    <input type="text" id="taskInput" placeholder="Enter a task" />
+    <div class="buttons">
+      <button id="addTaskBtn">Add Task</button>
+      <button id="markAllBtn">Mark All as Done</button>
+      <button id="clearCompletedBtn">Clear Completed</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    const taskInput = document.getElementById("taskInput");
+    const addTaskBtn = document.getElementById("addTaskBtn");
+    const markAllBtn = document.getElementById("markAllBtn");
+    const clearCompletedBtn = document.getElementById("clearCompletedBtn");
+    const taskList = document.getElementById("taskList");
+
+    addTaskBtn.addEventListener("click", () => {
+      const taskText = taskInput.value.trim();
+      if (taskText !== "") {
+        const li = document.createElement("li");
+        li.textContent = taskText;
+        li.addEventListener("click", () => {
+          li.classList.toggle("done");
+        });
+        taskList.appendChild(li);
+        taskInput.value = "";
+        taskInput.focus();
+      }
+    });
+
+    markAllBtn.addEventListener("click", () => {
+      const tasks = document.querySelectorAll("#taskList li");
+      tasks.forEach(task => task.classList.add("done"));
+    });
+
+    clearCompletedBtn.addEventListener("click", () => {
+      const completedTasks = document.querySelectorAll("#taskList li.done");
+      completedTasks.forEach(task => task.remove());
+    });
+
+    taskInput.addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        addTaskBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
