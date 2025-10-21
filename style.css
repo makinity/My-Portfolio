@@ -1028,7 +1028,7 @@ header ul a:hover{
     }
 
     .skills-section {
-        margin-top: 700px;
+        margin-top: 400px;
         scale: 0.8;
     }
 
@@ -1039,6 +1039,7 @@ header ul a:hover{
 
 @media screen and (max-width: 700px){
     .skills-section{
+        margin-top: 100px;
         display: flex;
         gap: 30px;
         flex-direction: column;
@@ -1160,7 +1161,7 @@ header ul a:hover{
     }
     .my-project{
         margin-top: 30px;
-        margin-bottom: 1500px;
+        margin-bottom: 1220px;
         gap: 200px;
     }
 
@@ -1200,7 +1201,7 @@ header ul a:hover{
     }
 
     .skills-section {
-        margin-top: 700px;
+        margin-top: 200px;
         margin-bottom: auto;
     }
 
@@ -1356,7 +1357,7 @@ header ul a:hover{
     }
 
     .skills-section {
-        margin-top: 2500px;
+        margin-top: 1700px;
         margin-bottom: auto;
     }
 
